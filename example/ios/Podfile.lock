@@ -1,126 +1,116 @@
 PODS:
   - AgoraIrisRTC_iOS (4.2.6-build.3)
-  - AgoraRtcEngine_iOS (4.2.6):
-    - AgoraRtcEngine_iOS/AIAEC (= 4.2.6)
-    - AgoraRtcEngine_iOS/AINS (= 4.2.6)
-    - AgoraRtcEngine_iOS/AudioBeauty (= 4.2.6)
-    - AgoraRtcEngine_iOS/ClearVision (= 4.2.6)
-    - AgoraRtcEngine_iOS/ContentInspect (= 4.2.6)
-    - AgoraRtcEngine_iOS/DRM (= 4.2.6)
-    - AgoraRtcEngine_iOS/FaceDetection (= 4.2.6)
-    - AgoraRtcEngine_iOS/ReplayKit (= 4.2.6)
-    - AgoraRtcEngine_iOS/RtcBasic (= 4.2.6)
-    - AgoraRtcEngine_iOS/SpatialAudio (= 4.2.6)
-    - AgoraRtcEngine_iOS/VideoCodecDec (= 4.2.6)
-    - AgoraRtcEngine_iOS/VideoCodecEnc (= 4.2.6)
-    - AgoraRtcEngine_iOS/VirtualBackground (= 4.2.6)
-    - AgoraRtcEngine_iOS/VQA (= 4.2.6)
-  - AgoraRtcEngine_iOS/AIAEC (4.2.6)
-  - AgoraRtcEngine_iOS/AINS (4.2.6)
-  - AgoraRtcEngine_iOS/AudioBeauty (4.2.6)
-  - AgoraRtcEngine_iOS/ClearVision (4.2.6)
-  - AgoraRtcEngine_iOS/ContentInspect (4.2.6)
-  - AgoraRtcEngine_iOS/DRM (4.2.6)
-  - AgoraRtcEngine_iOS/FaceDetection (4.2.6)
-  - AgoraRtcEngine_iOS/ReplayKit (4.2.6)
-  - AgoraRtcEngine_iOS/RtcBasic (4.2.6)
-  - AgoraRtcEngine_iOS/SpatialAudio (4.2.6)
-  - AgoraRtcEngine_iOS/VideoCodecDec (4.2.6)
-  - AgoraRtcEngine_iOS/VideoCodecEnc (4.2.6)
-  - AgoraRtcEngine_iOS/VirtualBackground (4.2.6)
-  - AgoraRtcEngine_iOS/VQA (4.2.6)
-  - BanubaFiltersAgoraExtension (2.4.1):
-    - AgoraRtcEngine_iOS/RtcBasic (~> 4.2.3)
-    - BNBSdkCore (~> 1.9.0)
-  - BanubaSdk (1.9.0):
-    - BNBAcneEyebagsRemoval (= 1.9.0)
-    - BNBBackground (= 1.9.0)
-    - BNBBody (= 1.9.0)
-    - BNBEffectPlayer (= 1.9.0)
-    - BNBEyes (= 1.9.0)
-    - BNBFaceMatch (= 1.9.0)
-    - BNBFaceTracker (= 1.9.0)
-    - BNBFaceTrackerLite (= 1.9.0)
-    - BNBHair (= 1.9.0)
-    - BNBHands (= 1.9.0)
-    - BNBLips (= 1.9.0)
-    - BNBNeurobeautyMakeup (= 1.9.0)
-    - BNBOcclusion (= 1.9.0)
-    - BNBPoseEstimation (= 1.9.0)
-    - BNBScripting (= 1.9.0)
-    - BNBSdkApi (= 1.9.0)
-    - BNBSdkCore (= 1.9.0)
-    - BNBSkin (= 1.9.0)
-    - BNBWatch (= 1.9.0)
-  - BNBAcneEyebagsRemoval (1.9.0):
-    - BNBEffectPlayer (= 1.9.0)
-    - BNBFaceTracker (= 1.9.0)
-    - BNBScripting (= 1.9.0)
-    - BNBSdkCore (= 1.9.0)
-  - BNBBackground (1.9.0):
-    - BNBEffectPlayer (= 1.9.0)
-    - BNBScripting (= 1.9.0)
-    - BNBSdkCore (= 1.9.0)
-  - BNBBody (1.9.0):
-    - BNBEffectPlayer (= 1.9.0)
-    - BNBScripting (= 1.9.0)
-    - BNBSdkCore (= 1.9.0)
-  - BNBEffectPlayer (1.9.0)
-  - BNBEyes (1.9.0):
-    - BNBEffectPlayer (= 1.9.0)
-    - BNBFaceTracker (= 1.9.0)
-    - BNBScripting (= 1.9.0)
-    - BNBSdkCore (= 1.9.0)
-  - BNBFaceMatch (1.9.0):
-    - BNBFaceTracker (= 1.9.0)
-    - BNBSdkCore (= 1.9.0)
-  - BNBFaceTracker (1.9.0):
-    - BNBEffectPlayer (= 1.9.0)
-    - BNBScripting (= 1.9.0)
-    - BNBSdkCore (= 1.9.0)
-  - BNBFaceTrackerLite (1.9.0):
-    - BNBEffectPlayer (= 1.9.0)
-    - BNBScripting (= 1.9.0)
-    - BNBSdkCore (= 1.9.0)
-  - BNBHair (1.9.0):
-    - BNBEffectPlayer (= 1.9.0)
-    - BNBScripting (= 1.9.0)
-    - BNBSdkCore (= 1.9.0)
-  - BNBHands (1.9.0):
-    - BNBEffectPlayer (= 1.9.0)
-    - BNBScripting (= 1.9.0)
-    - BNBSdkCore (= 1.9.0)
-  - BNBLips (1.9.0):
-    - BNBEffectPlayer (= 1.9.0)
-    - BNBFaceTracker (= 1.9.0)
-    - BNBScripting (= 1.9.0)
-    - BNBSdkCore (= 1.9.0)
-  - BNBNeurobeautyMakeup (1.9.0):
-    - BNBEffectPlayer (= 1.9.0)
-    - BNBFaceTracker (= 1.9.0)
-    - BNBScripting (= 1.9.0)
-    - BNBSdkCore (= 1.9.0)
-  - BNBOcclusion (1.9.0):
-    - BNBEffectPlayer (= 1.9.0)
-    - BNBFaceTracker (= 1.9.0)
-    - BNBScripting (= 1.9.0)
-    - BNBSdkCore (= 1.9.0)
-  - BNBPoseEstimation (1.9.0):
-    - BNBEffectPlayer (= 1.9.0)
-    - BNBScripting (= 1.9.0)
-    - BNBSdkCore (= 1.9.0)
-  - BNBScripting (1.9.0)
-  - BNBSdkApi (1.9.0):
-    - BNBSdkCore (= 1.9.0)
-  - BNBSdkCore (1.9.0)
-  - BNBSkin (1.9.0):
-    - BNBEffectPlayer (= 1.9.0)
-    - BNBScripting (= 1.9.0)
-    - BNBSdkCore (= 1.9.0)
-  - BNBWatch (1.9.0):
-    - BNBEffectPlayer (= 1.9.0)
-    - BNBScripting (= 1.9.0)
-    - BNBSdkCore (= 1.9.0)
+  - AgoraRtcEngine_iOS (4.3.2):
+    - AgoraRtcEngine_iOS/AIAEC (= 4.3.2)
+    - AgoraRtcEngine_iOS/AINS (= 4.3.2)
+    - AgoraRtcEngine_iOS/AudioBeauty (= 4.3.2)
+    - AgoraRtcEngine_iOS/ClearVision (= 4.3.2)
+    - AgoraRtcEngine_iOS/ContentInspect (= 4.3.2)
+    - AgoraRtcEngine_iOS/FaceCapture (= 4.3.2)
+    - AgoraRtcEngine_iOS/FaceDetection (= 4.3.2)
+    - AgoraRtcEngine_iOS/LipSync (= 4.3.2)
+    - AgoraRtcEngine_iOS/ReplayKit (= 4.3.2)
+    - AgoraRtcEngine_iOS/RtcBasic (= 4.3.2)
+    - AgoraRtcEngine_iOS/SpatialAudio (= 4.3.2)
+    - AgoraRtcEngine_iOS/VideoAv1CodecDec (= 4.3.2)
+    - AgoraRtcEngine_iOS/VideoAv1CodecEnc (= 4.3.2)
+    - AgoraRtcEngine_iOS/VideoCodecDec (= 4.3.2)
+    - AgoraRtcEngine_iOS/VideoCodecEnc (= 4.3.2)
+    - AgoraRtcEngine_iOS/VirtualBackground (= 4.3.2)
+    - AgoraRtcEngine_iOS/VQA (= 4.3.2)
+  - AgoraRtcEngine_iOS/AIAEC (4.3.2)
+  - AgoraRtcEngine_iOS/AINS (4.3.2)
+  - AgoraRtcEngine_iOS/AudioBeauty (4.3.2)
+  - AgoraRtcEngine_iOS/ClearVision (4.3.2)
+  - AgoraRtcEngine_iOS/ContentInspect (4.3.2)
+  - AgoraRtcEngine_iOS/FaceCapture (4.3.2)
+  - AgoraRtcEngine_iOS/FaceDetection (4.3.2)
+  - AgoraRtcEngine_iOS/LipSync (4.3.2)
+  - AgoraRtcEngine_iOS/ReplayKit (4.3.2)
+  - AgoraRtcEngine_iOS/RtcBasic (4.3.2)
+  - AgoraRtcEngine_iOS/SpatialAudio (4.3.2)
+  - AgoraRtcEngine_iOS/VideoAv1CodecDec (4.3.2)
+  - AgoraRtcEngine_iOS/VideoAv1CodecEnc (4.3.2)
+  - AgoraRtcEngine_iOS/VideoCodecDec (4.3.2)
+  - AgoraRtcEngine_iOS/VideoCodecEnc (4.3.2)
+  - AgoraRtcEngine_iOS/VirtualBackground (4.3.2)
+  - AgoraRtcEngine_iOS/VQA (4.3.2)
+  - BanubaFiltersAgoraExtension (2.5.0):
+    - AgoraRtcEngine_iOS/RtcBasic (~> 4.3.2)
+    - BNBSdkCore (>= 1.15.0)
+  - BanubaSdk (1.15.0):
+    - BNBAcneEyebagsRemoval (= 1.15.0)
+    - BNBBackground (= 1.15.0)
+    - BNBBody (= 1.15.0)
+    - BNBEffectPlayer (= 1.15.0)
+    - BNBEyes (= 1.15.0)
+    - BNBFaceAttributes (= 1.15.0)
+    - BNBFaceTracker (= 1.15.0)
+    - BNBHair (= 1.15.0)
+    - BNBHands (= 1.15.0)
+    - BNBLips (= 1.15.0)
+    - BNBMakeup (= 1.15.0)
+    - BNBScripting (= 1.15.0)
+    - BNBSdkApi (= 1.15.0)
+    - BNBSdkCore (= 1.15.0)
+    - BNBSkin (= 1.15.0)
+  - BNBAcneEyebagsRemoval (1.15.0):
+    - BNBEffectPlayer (= 1.15.0)
+    - BNBFaceTracker (= 1.15.0)
+    - BNBScripting (= 1.15.0)
+    - BNBSdkCore (= 1.15.0)
+  - BNBBackground (1.15.0):
+    - BNBEffectPlayer (= 1.15.0)
+    - BNBScripting (= 1.15.0)
+    - BNBSdkCore (= 1.15.0)
+  - BNBBody (1.15.0):
+    - BNBEffectPlayer (= 1.15.0)
+    - BNBScripting (= 1.15.0)
+    - BNBSdkCore (= 1.15.0)
+  - BNBEffectPlayer (1.15.0)
+  - BNBEyes (1.15.0):
+    - BNBEffectPlayer (= 1.15.0)
+    - BNBFaceTracker (= 1.15.0)
+    - BNBScripting (= 1.15.0)
+    - BNBSdkCore (= 1.15.0)
+  - BNBFaceAttributes (1.15.0):
+    - BNBEyes (= 1.15.0)
+    - BNBFaceTracker (= 1.15.0)
+    - BNBHair (= 1.15.0)
+    - BNBSdkCore (= 1.15.0)
+    - BNBSkin (= 1.15.0)
+  - BNBFaceTracker (1.15.0):
+    - BNBEffectPlayer (= 1.15.0)
+    - BNBScripting (= 1.15.0)
+    - BNBSdkCore (= 1.15.0)
+  - BNBHair (1.15.0):
+    - BNBEffectPlayer (= 1.15.0)
+    - BNBScripting (= 1.15.0)
+    - BNBSdkCore (= 1.15.0)
+  - BNBHands (1.15.0):
+    - BNBEffectPlayer (= 1.15.0)
+    - BNBScripting (= 1.15.0)
+    - BNBSdkCore (= 1.15.0)
+  - BNBLips (1.15.0):
+    - BNBEffectPlayer (= 1.15.0)
+    - BNBFaceTracker (= 1.15.0)
+    - BNBScripting (= 1.15.0)
+    - BNBSdkCore (= 1.15.0)
+  - BNBMakeup (1.15.0):
+    - BNBEffectPlayer (= 1.15.0)
+    - BNBFaceTracker (= 1.15.0)
+    - BNBLips (= 1.15.0)
+    - BNBScripting (= 1.15.0)
+    - BNBSdkCore (= 1.15.0)
+    - BNBSkin (= 1.15.0)
+  - BNBScripting (1.15.0)
+  - BNBSdkApi (1.15.0):
+    - BNBSdkCore (= 1.15.0)
+  - BNBSdkCore (1.15.0)
+  - BNBSkin (1.15.0):
+    - BNBEffectPlayer (= 1.15.0)
+    - BNBScripting (= 1.15.0)
+    - BNBSdkCore (= 1.15.0)
   - boost (1.76.0)
   - CocoaAsyncSocket (7.6.5)
   - DoubleConversion (1.1.6)
@@ -498,8 +488,8 @@ PODS:
   - React-logger (0.72.5):
     - glog
   - react-native-agora (4.2.6):
-    - AgoraIrisRTC_iOS (= 4.2.6-build.3)
-    - AgoraRtcEngine_iOS (= 4.2.6)
+    - AgoraIrisRTC_iOS (= 4.2.6-build3)
+    - AgoraRtcEngine_iOS (= 4.3.2)
     - RCT-Folly (= 2021.07.22.00)
     - React-Core
   - react-native-agora-rawdata (0.1.0):
@@ -639,9 +629,9 @@ PODS:
     - Yoga (~> 1.14)
 
 DEPENDENCIES:
-  - AgoraRtcEngine_iOS (= 4.2.6)
-  - BanubaFiltersAgoraExtension (= 2.4.1)
-  - BanubaSdk (= 1.9.0)
+  - AgoraRtcEngine_iOS (= 4.3.2)
+  - BanubaFiltersAgoraExtension (= 2.5.0)
+  - BanubaSdk (= 1.15.0)
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
@@ -719,6 +709,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - AgoraRtcEngine_iOS
     - CocoaAsyncSocket
     - Flipper
     - Flipper-Boost-iOSX
@@ -739,23 +730,18 @@ SPEC REPOS:
     - BNBBody
     - BNBEffectPlayer
     - BNBEyes
-    - BNBFaceMatch
+    - BNBFaceAttributes
     - BNBFaceTracker
-    - BNBFaceTrackerLite
     - BNBHair
     - BNBHands
     - BNBLips
-    - BNBNeurobeautyMakeup
-    - BNBOcclusion
-    - BNBPoseEstimation
+    - BNBMakeup
     - BNBScripting
     - BNBSdkApi
     - BNBSdkCore
     - BNBSkin
-    - BNBWatch
   trunk:
     - AgoraIrisRTC_iOS
-    - AgoraRtcEngine_iOS
     - fmt
     - libevent
 
@@ -864,28 +850,24 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AgoraIrisRTC_iOS: 8346499b82968a4967e3d0bec2cf14bf7c0c3f76
-  AgoraRtcEngine_iOS: ac647332ad8f86d79cf810601c9e62b28c3a4de0
-  BanubaFiltersAgoraExtension: fea63b93e297510d57aac9f7a9dcbb4f1c231a9b
-  BanubaSdk: ee3635ba3f53dc0576880aac5ba6fcae56b56b45
-  BNBAcneEyebagsRemoval: 7416acfd9d8cfd8ae588100ef2eb735919ff89c4
-  BNBBackground: db758a26198327ec22041110caa637a120739f34
-  BNBBody: 804527c7b4fe67e662aee31d7090c36afc3bb133
-  BNBEffectPlayer: 1642a422437a908f0ef266eaf732d8192d1e1eba
-  BNBEyes: bf52d4e46f8636308265b69c9d2d2d24cae69c7b
-  BNBFaceMatch: e3e83aa881e9318941a122aec3a1774efdb238e1
-  BNBFaceTracker: c38d747df91b05ac46341ebc35ec5f98a2149f85
-  BNBFaceTrackerLite: 7435232d8584290beb619b9c1c86db8e5f91e0c0
-  BNBHair: fb4102943467e7dcec7938792b75f4d11d886307
-  BNBHands: 3653be632010db9cb1ea2a16d2707cf9ba5acb79
-  BNBLips: 073721bbf05c6b2c4ecf794f743df9fc027b92b8
-  BNBNeurobeautyMakeup: 207130b3cff2e8e263a3d5f0fa173cd38546570b
-  BNBOcclusion: 9b2e6ec68f72b1164ba4f4824bde0ff0fddc2e50
-  BNBPoseEstimation: 4c80ab385d4e9492f82ec06013bd85ab583f6014
-  BNBScripting: 04bc08cab0ccf73761cc2c094d27cf00b16a69f8
-  BNBSdkApi: ea1fbc3f13597d7f1a5929c20bca88a2dd1a45da
-  BNBSdkCore: c5e9264cfd7c53a174955618f5202f1946768757
-  BNBSkin: 04755aea080b988a71d9e657520a83f17c0fd209
-  BNBWatch: cb242e70a036786aa56b3dd226bb105fc7c2c525
+  AgoraRtcEngine_iOS: eaa97751fcfe1b50d9b067e0df92752a6a5f899f
+  BanubaFiltersAgoraExtension: 812640b858fccc2445cbbf6207b49336778d76db
+  BanubaSdk: 293277f63dd8f4bebde331e077c254a1b116d5a5
+  BNBAcneEyebagsRemoval: 1fecf11a0eb5a7d34eea8ac7e2f9a3d64b9b9945
+  BNBBackground: 68c841aa0aac8557266b8cc7ec3bbfde3a8d35d3
+  BNBBody: 50a78f968885511be39cfb0fb21ea78b8cf385c1
+  BNBEffectPlayer: afaee6ee6df87f7a75a49e92abfc2dc24dc1e2e9
+  BNBEyes: 5da6f398dc07c690d3b45a8e3448a51cdd323158
+  BNBFaceAttributes: 90bab225fdd2df112e141b6bf68475a94f39a6ab
+  BNBFaceTracker: 3febf626299ab970fe21bc223ff395296f1ca200
+  BNBHair: 871728541df8929076d1d3f5433f885112e768d4
+  BNBHands: bf7e7c9c59b9d3b38155a73f3351b431f115af10
+  BNBLips: 67e7b50ae81bd2fca427c01205a1e12a89eb7ee0
+  BNBMakeup: cfa9b094c4cd6c330e47a1a1a05649fc71871831
+  BNBScripting: c9b88ac70adde819b6ef89cc3da6d1e1642fdac9
+  BNBSdkApi: ce11ba6bff1d1cd24a868be03d9fc1ef020c1451
+  BNBSdkCore: 282ad1cf3ecac1780e669f7220c5e5ecca565070
+  BNBSkin: c719fc70bb57915c4c3b9edd23dccf211df0c60d
   boost: 57d2868c099736d80fcd648bf211b4431e51a558
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
@@ -919,7 +901,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: ff70a72027dea5cc7d71cfcc6fad7f599f63987a
   React-jsinspector: aef73cbd43b70675f572214d10fa438c89bf11ba
   React-logger: 2e4aee3e11b3ec4fa6cfd8004610bbb3b8d6cca4
-  react-native-agora: 7026292738f2de759f532938db629c7acda377af
+  react-native-agora: 1c744e165f020a5f68f6742c41c91bd11b9392ff
   react-native-agora-rawdata: 097895cdccd8fcf3cff5dffe23372f5d3c89fd31
   react-native-image-tools: 88218449791389bbf550a2c475a3b564c8233c8b
   react-native-safe-area-context: 7aa8e6d9d0f3100a820efb1a98af68aa747f9284
@@ -951,6 +933,6 @@ SPEC CHECKSUMS:
   Yoga: 86fed2e4d425ee4c6eab3813ba1791101ee153c6
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 0dbf67ac00cdec12e17027fbcdbf86deae093b25
+PODFILE CHECKSUM: 48d34d2557dc082b2b82ee399c88715e697a11e0
 
-COCOAPODS: 1.14.2
+COCOAPODS: 1.15.2
