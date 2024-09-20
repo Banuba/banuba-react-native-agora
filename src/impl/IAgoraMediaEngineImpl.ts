@@ -9,6 +9,7 @@ import {
   ExternalVideoFrame,
   ExternalVideoSourceType,
   IAudioFrameObserver,
+  IFaceInfoObserver,
   IVideoEncodedFrameObserver,
   IVideoFrameObserver,
 } from '../AgoraMediaBase';
@@ -31,7 +32,7 @@ export class IMediaEngineImpl implements IMediaEngine {
   protected getApiTypeFromRegisterAudioFrameObserver(
     observer: IAudioFrameObserver
   ): string {
-    return 'MediaEngine_registerAudioFrameObserver';
+    return 'MediaEngine_registerAudioFrameObserver_d873a64';
   }
 
   registerVideoFrameObserver(observer: IVideoFrameObserver): number {
@@ -49,7 +50,7 @@ export class IMediaEngineImpl implements IMediaEngine {
   protected getApiTypeFromRegisterVideoFrameObserver(
     observer: IVideoFrameObserver
   ): string {
-    return 'MediaEngine_registerVideoFrameObserver';
+    return 'MediaEngine_registerVideoFrameObserver_2cc0ef1';
   }
 
   registerVideoEncodedFrameObserver(
@@ -70,7 +71,25 @@ export class IMediaEngineImpl implements IMediaEngine {
   protected getApiTypeFromRegisterVideoEncodedFrameObserver(
     observer: IVideoEncodedFrameObserver
   ): string {
-    return 'MediaEngine_registerVideoEncodedFrameObserver';
+    return 'MediaEngine_registerVideoEncodedFrameObserver_d45d579';
+  }
+
+  registerFaceInfoObserver(observer: IFaceInfoObserver): number {
+    const apiType = this.getApiTypeFromRegisterFaceInfoObserver(observer);
+    const jsonParams = {
+      observer: observer,
+      toJSON: () => {
+        return {};
+      },
+    };
+    const jsonResults = callIrisApi.call(this, apiType, jsonParams);
+    return jsonResults.result;
+  }
+
+  protected getApiTypeFromRegisterFaceInfoObserver(
+    observer: IFaceInfoObserver
+  ): string {
+    return 'MediaEngine_registerFaceInfoObserver_0303ed6';
   }
 
   pushAudioFrame(frame: AudioFrame, trackId: number = 0): number {
@@ -93,7 +112,7 @@ export class IMediaEngineImpl implements IMediaEngine {
     frame: AudioFrame,
     trackId: number = 0
   ): string {
-    return 'MediaEngine_pushAudioFrame';
+    return 'MediaEngine_pushAudioFrame_c71f4ab';
   }
 
   pullAudioFrame(frame: AudioFrame): number {
@@ -111,7 +130,7 @@ export class IMediaEngineImpl implements IMediaEngine {
   }
 
   protected getApiTypeFromPullAudioFrame(frame: AudioFrame): string {
-    return 'MediaEngine_pullAudioFrame';
+    return 'MediaEngine_pullAudioFrame_2c74a9c';
   }
 
   setExternalVideoSource(
@@ -150,7 +169,7 @@ export class IMediaEngineImpl implements IMediaEngine {
     sourceType: ExternalVideoSourceType = ExternalVideoSourceType.VideoFrame,
     encodedVideoOption: SenderOptions = new SenderOptions()
   ): string {
-    return 'MediaEngine_setExternalVideoSource';
+    return 'MediaEngine_setExternalVideoSource_fff99b6';
   }
 
   setExternalAudioSource(
@@ -194,7 +213,7 @@ export class IMediaEngineImpl implements IMediaEngine {
     localPlayback: boolean = false,
     publish: boolean = true
   ): string {
-    return 'MediaEngine_setExternalAudioSource';
+    return 'MediaEngine_setExternalAudioSource_e6538be';
   }
 
   createCustomAudioTrack(
@@ -223,7 +242,7 @@ export class IMediaEngineImpl implements IMediaEngine {
     trackType: AudioTrackType,
     config: AudioTrackConfig
   ): string {
-    return 'MediaEngine_createCustomAudioTrack';
+    return 'MediaEngine_createCustomAudioTrack_5a0bf1a';
   }
 
   destroyCustomAudioTrack(trackId: number): number {
@@ -241,7 +260,7 @@ export class IMediaEngineImpl implements IMediaEngine {
   }
 
   protected getApiTypeFromDestroyCustomAudioTrack(trackId: number): string {
-    return 'MediaEngine_destroyCustomAudioTrack';
+    return 'MediaEngine_destroyCustomAudioTrack_6178b5d';
   }
 
   setExternalAudioSink(
@@ -275,7 +294,7 @@ export class IMediaEngineImpl implements IMediaEngine {
     sampleRate: number,
     channels: number
   ): string {
-    return 'MediaEngine_setExternalAudioSink';
+    return 'MediaEngine_setExternalAudioSink_d275ce0';
   }
 
   enableCustomAudioLocalPlayback(trackId: number, enabled: boolean): number {
@@ -301,7 +320,7 @@ export class IMediaEngineImpl implements IMediaEngine {
     trackId: number,
     enabled: boolean
   ): string {
-    return 'MediaEngine_enableCustomAudioLocalPlayback';
+    return 'MediaEngine_enableCustomAudioLocalPlayback_5f38e8a';
   }
 
   pushVideoFrame(frame: ExternalVideoFrame, videoTrackId: number = 0): number {
@@ -324,7 +343,7 @@ export class IMediaEngineImpl implements IMediaEngine {
     frame: ExternalVideoFrame,
     videoTrackId: number = 0
   ): string {
-    return 'MediaEngine_pushVideoFrame';
+    return 'MediaEngine_pushVideoFrame_4e544e2';
   }
 
   pushEncodedVideoImage(
@@ -362,7 +381,7 @@ export class IMediaEngineImpl implements IMediaEngine {
     videoEncodedFrameInfo: EncodedVideoFrameInfo,
     videoTrackId: number = 0
   ): string {
-    return 'MediaEngine_pushEncodedVideoImage';
+    return 'MediaEngine_pushEncodedVideoImage_e71452b';
   }
 
   release(): void {
@@ -430,6 +449,24 @@ export class IMediaEngineImpl implements IMediaEngine {
     observer: IVideoEncodedFrameObserver
   ): string {
     return 'MediaEngine_unregisterVideoEncodedFrameObserver';
+  }
+
+  unregisterFaceInfoObserver(observer: IFaceInfoObserver): number {
+    const apiType = this.getApiTypeFromUnregisterFaceInfoObserver(observer);
+    const jsonParams = {
+      observer: observer,
+      toJSON: () => {
+        return {};
+      },
+    };
+    const jsonResults = callIrisApi.call(this, apiType, jsonParams);
+    return jsonResults.result;
+  }
+
+  protected getApiTypeFromUnregisterFaceInfoObserver(
+    observer: IFaceInfoObserver
+  ): string {
+    return 'MediaEngine_unregisterFaceInfoObserver';
   }
 }
 

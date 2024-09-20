@@ -5,6 +5,7 @@ import {
   IMusicPlayer,
   Music,
   MusicCollection,
+  MusicPlayMode,
 } from '../IAgoraMusicContentCenter';
 import { IMusicContentCenterEvent } from '../extension/IAgoraMusicContentCenterExtension';
 import {
@@ -104,10 +105,6 @@ export class MusicContentCenterInternal extends IMusicContentCenterImpl {
     const mediaPlayerId = super.createMusicPlayer() as number;
     return new MusicPlayerInternal(mediaPlayerId);
   }
-
-  protected override getApiTypeFromPreload(songCode: number): string {
-    return 'MusicContentCenter_preload2';
-  }
 }
 
 class _MusicPlayerInternal extends IMusicPlayerImpl {
@@ -121,13 +118,6 @@ class _MusicPlayerInternal extends IMusicPlayerImpl {
   override getMediaPlayerId(): number {
     return this._mediaPlayerId;
   }
-
-  protected override getApiTypeFromOpenWithSongCode(
-    songCode: number,
-    startPos = 0
-  ): string {
-    return 'MusicPlayer_open';
-  }
 }
 
 export class MusicPlayerInternal
@@ -140,6 +130,10 @@ export class MusicPlayerInternal
     super(mediaPlayerId);
     // @ts-ignore
     this._musicPlayer = new _MusicPlayerInternal(mediaPlayerId);
+  }
+
+  setPlayMode(mode: MusicPlayMode): number {
+    return this._musicPlayer.setPlayMode(mode);
   }
 
   openWithSongCode(songCode: number, startPos?: number): number {

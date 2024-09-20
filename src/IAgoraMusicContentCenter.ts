@@ -4,61 +4,79 @@ import { IMediaPlayer } from './IAgoraMediaPlayer';
 /**
  * @ignore
  */
-export enum PreloadStatusCode {
+export enum MusicPlayMode {
   /**
    * @ignore
    */
-  KPreloadStatusCompleted = 0,
+  KMusicPlayModeOriginal = 0,
   /**
    * @ignore
    */
-  KPreloadStatusFailed = 1,
+  KMusicPlayModeAccompany = 1,
   /**
    * @ignore
    */
-  KPreloadStatusPreloading = 2,
-  /**
-   * @ignore
-   */
-  KPreloadStatusRemoved = 3,
+  KMusicPlayModeLeadSing = 2,
 }
 
 /**
  * @ignore
  */
-export enum MusicContentCenterStatusCode {
+export enum PreloadState {
   /**
    * @ignore
    */
-  KMusicContentCenterStatusOk = 0,
+  KPreloadStateCompleted = 0,
   /**
    * @ignore
    */
-  KMusicContentCenterStatusErr = 1,
+  KPreloadStateFailed = 1,
   /**
    * @ignore
    */
-  KMusicContentCenterStatusErrGateway = 2,
+  KPreloadStatePreloading = 2,
   /**
    * @ignore
    */
-  KMusicContentCenterStatusErrPermissionAndResource = 3,
+  KPreloadStateRemoved = 3,
+}
+
+/**
+ * @ignore
+ */
+export enum MusicContentCenterStateReason {
   /**
    * @ignore
    */
-  KMusicContentCenterStatusErrInternalDataParse = 4,
+  KMusicContentCenterReasonOk = 0,
   /**
    * @ignore
    */
-  KMusicContentCenterStatusErrMusicLoading = 5,
+  KMusicContentCenterReasonError = 1,
   /**
    * @ignore
    */
-  KMusicContentCenterStatusErrMusicDecryption = 6,
+  KMusicContentCenterReasonGateway = 2,
   /**
    * @ignore
    */
-  KMusicContentCenterStatusErrHttpInternalError = 7,
+  KMusicContentCenterReasonPermissionAndResource = 3,
+  /**
+   * @ignore
+   */
+  KMusicContentCenterReasonInternalDataParse = 4,
+  /**
+   * @ignore
+   */
+  KMusicContentCenterReasonMusicLoading = 5,
+  /**
+   * @ignore
+   */
+  KMusicContentCenterReasonMusicDecryption = 6,
+  /**
+   * @ignore
+   */
+  KMusicContentCenterReasonHttpInternalError = 7,
 }
 
 /**
@@ -248,7 +266,7 @@ export interface IMusicContentCenterEventHandler {
   onMusicChartsResult?(
     requestId: string,
     result: MusicChartInfo[],
-    errorCode: MusicContentCenterStatusCode
+    reason: MusicContentCenterStateReason
   ): void;
 
   /**
@@ -257,7 +275,7 @@ export interface IMusicContentCenterEventHandler {
   onMusicCollectionResult?(
     requestId: string,
     result: MusicCollection,
-    errorCode: MusicContentCenterStatusCode
+    reason: MusicContentCenterStateReason
   ): void;
 
   /**
@@ -267,7 +285,7 @@ export interface IMusicContentCenterEventHandler {
     requestId: string,
     songCode: number,
     lyricUrl: string,
-    errorCode: MusicContentCenterStatusCode
+    reason: MusicContentCenterStateReason
   ): void;
 
   /**
@@ -277,7 +295,7 @@ export interface IMusicContentCenterEventHandler {
     requestId: string,
     songCode: number,
     simpleInfo: string,
-    errorCode: MusicContentCenterStatusCode
+    reason: MusicContentCenterStateReason
   ): void;
 
   /**
@@ -288,8 +306,8 @@ export interface IMusicContentCenterEventHandler {
     songCode: number,
     percent: number,
     lyricUrl: string,
-    status: PreloadStatusCode,
-    errorCode: MusicContentCenterStatusCode
+    state: PreloadState,
+    reason: MusicContentCenterStateReason
   ): void;
 }
 
@@ -323,6 +341,11 @@ export class MusicContentCenterConfiguration {
  * @ignore
  */
 export abstract class IMusicPlayer extends IMediaPlayer {
+  /**
+   * @ignore
+   */
+  abstract setPlayMode(mode: MusicPlayMode): number;
+
   /**
    * @ignore
    */
@@ -364,6 +387,11 @@ export abstract class IMusicContentCenter {
    * @ignore
    */
   abstract createMusicPlayer(): IMusicPlayer;
+
+  /**
+   * @ignore
+   */
+  abstract destroyMusicPlayer(musicPlayer: IMusicPlayer): number;
 
   /**
    * @ignore
