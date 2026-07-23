@@ -9,12 +9,13 @@ import {
   SimulcastStreamConfig,
   SimulcastStreamMode,
 } from '../AgoraBase';
-import { IAudioSpectrumObserver } from '../AgoraMediaBase';
+import { IAudioSpectrumObserver, MediaSourceType } from '../AgoraMediaBase';
 import { IH265Transcoder } from '../IAgoraH265Transcoder';
 import { IMediaEngine } from '../IAgoraMediaEngine';
 import { IMediaPlayer } from '../IAgoraMediaPlayer';
 import { IMediaRecorder } from '../IAgoraMediaRecorder';
 import { IMusicContentCenter } from '../IAgoraMusicContentCenter';
+import { AgoraPip } from '../IAgoraPip';
 import {
   ChannelMediaOptions,
   DirectCdnStreamingMediaOptions,
@@ -22,6 +23,7 @@ import {
   IMetadataObserver,
   IRtcEngineEventHandler,
   IVideoDeviceManager,
+  IVideoEffectObject,
   LeaveChannelOptions,
   MetadataType,
   RtcEngineContext,
@@ -30,6 +32,7 @@ import {
 import { RtcConnection } from '../IAgoraRtcEngineEx';
 import { ILocalSpatialAudioEngine } from '../IAgoraSpatialAudio';
 import { IAudioDeviceManager } from '../IAudioDeviceManager';
+import { parseIntPtr2Number } from '../Utils';
 import { IRtcEngineEvent } from '../extension/IAgoraRtcEngineExtension';
 import { IRtcEngineExImpl } from '../impl/IAgoraRtcEngineExImpl';
 import AgoraBaseTI from '../ti/AgoraBase-ti';
@@ -37,17 +40,15 @@ import AgoraMediaBaseTI from '../ti/AgoraMediaBase-ti';
 import IAgoraRtcEngineTI from '../ti/IAgoraRtcEngine-ti';
 
 import { H265TranscoderInternal } from './AgoraH265TranscoderInternal';
-import {
-  DeviceEventEmitter,
-  EVENT_TYPE,
-  EventProcessor,
-  callIrisApi,
-} from './IrisApiEngine';
+import { AgoraPipInternal } from './AgoraPipInternal';
 import { LocalSpatialAudioEngineInternal } from './LocalSpatialAudioEngineInternal';
 import { MediaEngineInternal } from './MediaEngineInternal';
 import { MediaPlayerInternal } from './MediaPlayerInternal';
 import { MediaRecorderInternal } from './MediaRecorderInternal';
 import { MusicContentCenterInternal } from './MusicContentCenterInternal';
+import { VideoEffectObjectInternal } from './VideoEffectObjectInternal';
+import { callIrisApi } from './call';
+import { DeviceEventEmitter, EVENT_TYPE, EventProcessor } from './event';
 
 const checkers = createCheckers(
   AgoraBaseTI,
@@ -68,6 +69,7 @@ export class RtcEngineExInternal extends IRtcEngineExImpl {
   private _local_spatial_audio_engine: ILocalSpatialAudioEngine =
     new LocalSpatialAudioEngineInternal();
   private _h265_transcoder: IH265Transcoder = new H265TranscoderInternal();
+  private _agora_pip: AgoraPip = new AgoraPipInternal();
 
   override initialize(context: RtcEngineContext): number {
     const ret = super.initialize(context);
@@ -78,6 +80,7 @@ export class RtcEngineExInternal extends IRtcEngineExImpl {
   }
 
   override release(sync: boolean = false) {
+    this._agora_pip.release();
     this._media_engine.release();
     this._local_spatial_audio_engine.release();
     RtcEngineExInternal._event_handlers.map((it) => {
@@ -384,6 +387,11 @@ export class RtcEngineExInternal extends IRtcEngineExImpl {
     return this._h265_transcoder;
   }
 
+  override getNativeHandle(): number {
+    let result = super.getNativeHandle();
+    return parseIntPtr2Number(result);
+  }
+
   override registerAudioEncodedFrameObserver(
     config: AudioEncodedFrameObserverConfig,
     observer: IAudioEncodedFrameObserver
@@ -429,5 +437,28 @@ export class RtcEngineExInternal extends IRtcEngineExImpl {
         (value) => value !== observer
       );
     return super.unregisterAudioSpectrumObserver(observer);
+  }
+
+  getAgoraPip(): AgoraPip {
+    return this._agora_pip;
+  }
+
+  override createVideoEffectObject(
+    bundlePath: string,
+    type?: MediaSourceType
+  ): IVideoEffectObject {
+    // @ts-ignore
+    const videoEffectObjectId = super.createVideoEffectObject(
+      bundlePath,
+      type
+    ) as number;
+    return new VideoEffectObjectInternal(videoEffectObjectId);
+  }
+
+  override destroyVideoEffectObject(
+    videoEffectObject: IVideoEffectObject
+  ): number {
+    const ret = super.destroyVideoEffectObject(videoEffectObject);
+    return ret;
   }
 }

@@ -1,12 +1,14 @@
-This is forked Agora repository to demonstrate integration with [Banuba SDK](https://docs.banuba.com).
-Integration was made in 
-[JoinChannelVideo](https://github.com/Banuba/banuba-react-native-agora/tree/main/example/src/examples/basic/JoinChannelVideo).
-Initial changes was made in [this commit](https://github.com/AgoraIO-Extensions/react-native-agora/compare/main...Banuba:banuba-react-native-agora:main). 
+This fork demonstrates the Banuba Face AR extension in the React Native Agora
+video example. The integration is in
+[`examples/legacy/src/examples/basic/JoinChannelVideo`](examples/legacy/src/examples/basic/JoinChannelVideo)
+and uses React Native Agora 4.6.2 with Banuba's Agora extension 2.6.0 on Android
+and iOS.
 
----
+> ⚠️ **Note**: To provide you with better and higher quality technical support services, we will no longer provide technical support through GitHub issues. If you need help, please contact us directly through [Agora Support](https://www.agora.io/en/customer-support/).
 
 > NOTE: These sdk and samples only for the Agora Video 4.x APIs. For examples using previous releases please see the following branches:
->  - [3.x](https://github.com/AgoraIO-Extensions/react-native-agora/tree/3.x)
+>
+> - [3.x](https://github.com/AgoraIO-Extensions/react-native-agora/tree/3.x)
 
 # react-native-agora
 
@@ -53,10 +55,10 @@ pod install
 ## General Usage
 
 ```typescript
-import {createAgoraRtcEngine} from 'react-native-agora';
+import { createAgoraRtcEngine } from 'react-native-agora';
 
 const engine = createAgoraRtcEngine();
-engine.initialize({appId: 'YOUR APP ID'});
+engine.initialize({ appId: 'YOUR APP ID' });
 ```
 
 or
@@ -64,15 +66,15 @@ or
 ```javascript
 const createAgoraRtcEngine = require('react-native-agora');
 const engine = createAgoraRtcEngine();
-engine.initialize({appId: 'YOUR APP ID'});
+engine.initialize({ appId: 'YOUR APP ID' });
 ```
 
 ## Using TypeScript
 
 We suggest you use TypeScript to develop, or use TypeScript eslint to lint your code.
 
-* [Getting Started with TypeScript](https://reactnative.dev/docs/typescript#getting-started-with-typescript)
-* [Adding TypeScript to an Existing Project](https://reactnative.dev/docs/typescript#adding-typescript-to-an-existing-project)
+- [Getting Started with TypeScript](https://reactnative.dev/docs/typescript#getting-started-with-typescript)
+- [Adding TypeScript to an Existing Project](https://reactnative.dev/docs/typescript#adding-typescript-to-an-existing-project)
 
 ## Troubleshooting
 
@@ -124,19 +126,38 @@ Fixed in React Native 0.59.9.
 
 Source: https://github.com/facebook/react-native/issues/25154
 
+### FOREGROUND_SERVICE_MEDIA_PROJECTION permission
+
+If you are not using screen sharing feature in your app, you should exclude Screen Sharing extension as below:
+
+```
+// build.gradle (project-level)
+signingConfigs{
+ ....
+}
+
+configurations.configureEach {
+    exclude group: "io.agora.rtc", module: "full-screen-sharing"
+}
+compileOptions{
+ ...
+}
+```
+
 ## API
 
-* [React Native API](https://api-ref.agora.io/en/video-sdk/react-native/4.x/API/rtc_api_overview_ng.html)
-* [Android API](https://api-ref.agora.io/en/video-sdk/android/4.x/API/rtc_api_overview_ng.html)
-* [iOS API](https://api-ref.agora.io/en/video-sdk/ios/4.x/API/rtc_api_overview_ng.html)
+- [React Native API](https://api-ref.agora.io/en/video-sdk/react-native/4.x/API/rtc_api_overview_ng.html)
+- [Android API](https://api-ref.agora.io/en/video-sdk/android/4.x/API/rtc_api_overview_ng.html)
+- [iOS API](https://api-ref.agora.io/en/video-sdk/ios/4.x/API/rtc_api_overview_ng.html)
 
 ## Resources
 
-* Complete [API Doc](https://docs.agora.io/en/) at the Developer Center
-* [Changelog](CHANGELOG.md)
-* [Release Notes](https://docs.agora.io/en/video-calling/reference/release-notes?platform=react-native)
-* [File bugs about this sample](https://github.com/AgoraIO-Extensions/react-native-agora/issues)
-* [React Native Getting Started](https://facebook.github.io/react-native/docs/getting-started.html)
+- Complete [API Doc](https://docs.agora.io/en/) at the Developer Center
+- [Changelog](CHANGELOG.md)
+- [Release Notes](https://docs.agora.io/en/video-calling/reference/release-notes?platform=react-native)
+- [File bugs about this sample](https://github.com/AgoraIO-Extensions/react-native-agora/issues)
+- [React Native Getting Started](https://facebook.github.io/react-native/docs/getting-started.html)
+- [Picture in Picture](./example/src/examples/advanced/PictureInPicture/PictureInPicture.md)
 
 ## Contributing
 

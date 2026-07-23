@@ -14,6 +14,7 @@ import {
   IVideoFrameObserver,
 } from '../AgoraMediaBase';
 import { IMediaEngine } from '../IAgoraMediaEngine';
+import { callIrisApi } from '../internal/call';
 
 // @ts-ignore
 export class IMediaEngineImpl implements IMediaEngine {
@@ -170,6 +171,24 @@ export class IMediaEngineImpl implements IMediaEngine {
     encodedVideoOption: SenderOptions = new SenderOptions()
   ): string {
     return 'MediaEngine_setExternalVideoSource_fff99b6';
+  }
+
+  setExternalRemoteEglContext(eglContext: any): number {
+    const apiType = this.getApiTypeFromSetExternalRemoteEglContext(eglContext);
+    const jsonParams = {
+      eglContext: eglContext,
+      toJSON: () => {
+        return {
+          eglContext: eglContext,
+        };
+      },
+    };
+    const jsonResults = callIrisApi.call(this, apiType, jsonParams);
+    return jsonResults.result;
+  }
+
+  protected getApiTypeFromSetExternalRemoteEglContext(eglContext: any): string {
+    return 'MediaEngine_setExternalRemoteEglContext_f337cbf';
   }
 
   setExternalAudioSource(
@@ -469,5 +488,3 @@ export class IMediaEngineImpl implements IMediaEngine {
     return 'MediaEngine_unregisterFaceInfoObserver';
   }
 }
-
-import { callIrisApi } from '../internal/IrisApiEngine';
