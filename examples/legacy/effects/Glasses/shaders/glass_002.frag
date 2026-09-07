@@ -57,7 +57,7 @@ void main()
     vec3 mrao = texture(BNB_SAMPLER_2D(metallic_roughness), var_uv).xyz;
 
     float metallic = mrao.z;
-    float roughness = mrao.y;
+    float roughness = mrao.y+0.1;
     float ao = mrao.x;
 
     vec3 N = normalize(mat3(var_t, var_b, var_n) * (texture(BNB_SAMPLER_2D(normal), var_uv).xyz * 2. - 1.));
